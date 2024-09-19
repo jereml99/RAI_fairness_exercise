@@ -3,6 +3,8 @@
 /pretrained_model/
 /datafiles/
 /total_data/
+*.yml
+
 
 
 # __pycache__
