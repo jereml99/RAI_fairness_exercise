@@ -2,6 +2,7 @@
 /dev/
 /pretrained_model/
 /datafiles/
+/total_data/
 
 
 # __pycache__
