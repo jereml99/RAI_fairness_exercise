@@ -2,7 +2,7 @@
 /dev/
 /pretrained_model/
 /datafiles/
-
+/datafolder/NIH_part/
 
 # __pycache__
 **/__pycache__
