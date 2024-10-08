@@ -18,7 +18,6 @@ def validate(model, loader, device):
         for batch in tqdm(loader):
             img, lab, a = batch['image'].to(device), batch['label'].to(device), batch['sensitive_attribute'].to(device)
             batch = {'image': img, 'label': lab, 'sensitive_attribute': a}
-
             prob,loss, _,_ = model.process_batch(batch)
             prob = prob.view(-1)
 
