@@ -18,9 +18,10 @@ from train.dataloader import ChestXrayDataset
 from train.model import ResNet
 
 def create_datasets(img_data_dir, ds_name,metadata_csv_path, image_size=(1,224,224), disease_label =None, sensitive_label = None, 
-                    augmentation = None, device=None, random_seed=42):
-
-    df_split = pd.read_csv(metadata_csv_path)
+                    augmentation = None, device=None, random_seed=42, df_split=None):
+    
+    if df_split is None:
+        df_split = pd.read_csv(metadata_csv_path)
 
     # Create datasets
     train_df = df_split[df_split['split'] == 'train'].reset_index(drop=True)

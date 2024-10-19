@@ -1,5 +1,5 @@
 import torch
-# import pandas as pd
+import pandas as pd
 from PIL import Image
 # import os
 import torchvision.transforms as TF 
@@ -53,6 +53,9 @@ class ChestXrayDataset(Dataset):
 
         if self.sensitive_label == 'sex':
             self.col_name_a = 'sex_label'
+        elif self.sensitive_label == 'age':
+            self.col_name_a = 'age_range'
+            self.df_data[self.col_name_a] = pd.qcut(self.df_data['Patient Age'], q=2, labels=[0,1])
 
         else:
             print('{} not implemented'.format(self.sensitive_label))
